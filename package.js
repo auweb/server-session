@@ -1,0 +1,29 @@
+Package.describe({
+  name: 'auweb:server-session',
+  version: '0.0.5',
+  // Brief, one-line summary of the package.
+  summary: 'Adds reactive client to server sessions.',
+  // URL to the Git repository containing the source code for this package.
+  git: '',
+  // By default, Meteor will default to using README.md for documentation.
+  // To avoid submitting documentation, set this field to null.
+  documentation: 'README.md'
+});
+
+Package.onUse(function(api) {
+  api.versionsFrom('1.2.1');
+  api.use('ecmascript');
+  api.use('mongo');
+  api.addFiles('server.js', 'server');
+  api.addFiles('client.js', 'client');
+  api.addFiles('both.js');
+  api.export('ServerSession');
+  api.export('ServerSessions');
+});
+
+Package.onTest(function(api) {
+  api.use('ecmascript');
+  api.use('tinytest');
+  api.use('auweb:server-session');
+  api.addFiles('server-session-tests.js');
+});
