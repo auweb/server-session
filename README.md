@@ -1,3 +1,8 @@
+# Installation
+```
+meteor add auweb:server-session
+```
+
 # Basic usage
 If setting the session from the server, a connection id must be provided:
 ```
