@@ -32,7 +32,7 @@ Meteor.publish("documents", function(){
 ```
 On the client, create a template helper to display the count:
 ```
-Meteor.documents.helpers({
+Template.documents.helpers({
 	documentsCount: function(){
 		return ServerSession.get("documentsCount");
 	}
