@@ -7,7 +7,7 @@ meteor add auweb:server-session
 If setting the session from the server, a connection id must be provided:
 ```
 # From inside publish function, for example
-ServerSession.set("foo", "bar");
+ServerSession.set("foo", "bar", this.connection.id);
 ```
 Setting a server session from the client:
 ```
