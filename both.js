@@ -5,6 +5,8 @@ ServerSession = {
 		Meteor.call("addServerSession", name, value, connectionId);
 	},
 	get: function(name){
-		return ServerSessions.findOne({name: name}).value;
+		var serverSession = ServerSessions.findOne({name: name});
+		if(serverSession) return serverSession.value;
+		else return undefined;
 	}
 }
